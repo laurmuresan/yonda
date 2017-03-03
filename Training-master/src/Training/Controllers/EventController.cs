@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using Training.Repository;
+using System.Collections;
+using Training.Models;
+
+namespace Training.Controllers
+{
+    [Route("api/[controller]")]
+    public class EventController : Controller
+    {
+
+        // POST api/values
+        [HttpGet("event")]
+        public IEnumerable<Event> getEvents()
+        {
+
+            RepositoryEvent repo = new RepositoryEvent();
+
+            return repo.GetEvent();
+
+        }
+    }
+}
+
