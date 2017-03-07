@@ -11,14 +11,9 @@
         var service = {};
 
         service.getEvents = function () {
-            $http({
+            return $http({
                 method: 'Get',
-                url: 'http://localhost:51427/api/account/allevents'
-            }).then(function (result) {
-                console.log("succes");
-
-            }).catch(function (result) {
-                console.log("error");
+                url: 'http://localhost:51427/api/event/allevents'
             });
         };
 

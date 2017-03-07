@@ -1,12 +1,8 @@
-﻿<div _ngcontent-rrk-2="" class="well hoverwell thumbnail" ng-reflect-router-link="/events,1">
-    <h2 _ngcontent-rrk-2="">{{ event.Name }}</h2>
-    <div _ngcontent-rrk-2="">{{ event.Date }}</div>
-
-
-    <div _ngcontent-rrk-2="" ng-reflect-ng-class="[object Object]" ng-reflect-ng-switch="10:00 am">
-        {{ event.Time }}
-
-    </div>
-    <div _ngcontent-rrk-2="">{{ event.Price }}</div>
-    <div _ngcontent-rrk-2="">{{ event.location }}</div>
+﻿<div _ngcontent-rrk-2="" class="well hoverwell thumbnail" >
+    <h2 _ngcontent-rrk-2="">{{ eventItem.name }}</h2>
+    <div _ngcontent-rrk-2="">Date:   {{ eventItem.date | date }}</div>
+    <div _ngcontent-rrk-2=""ng-reflect-ng-class="[object Object]" ng-reflect-ng-switch="10:00 am" >Time:   {{ eventItem.time }}</div>
+    <div _ngcontent-rrk-2="">Price:   {{ eventItem.price | currency }}</div>
+    <div _ngcontent-rrk-2="">Location:   {{ eventItem.location }}</div>
+    
 </div>

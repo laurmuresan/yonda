@@ -1,7 +1,7 @@
-﻿allevents
-  <div ng-controller="AlleventsController">
-        <div ng-repeat="event in events" class="col-md-6">
-            <allevents-directive event-item='event'>                 
-            </allevents-directive>
-        </div>
+﻿
+<div ng-controller="AlleventsController as eventController">
+    <div ng-repeat="event in eventController.events" class="col-md-6">
+        <all-events-directive event-item='event'>
+        </all-events-directive>
     </div>
+</div>

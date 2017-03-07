@@ -15,14 +15,14 @@ namespace Training.Controllers
     {
 
         // POST api/values
-        [HttpGet("event")]
+        [HttpGet("allevents")]
         public IEnumerable<Event> getEvents()
         {
 
-            RepositoryEvent repo = new RepositoryEvent();
-
-            return repo.GetEvent();
-
+            using (RepositoryEvent repo = new RepositoryEvent())
+            {
+                return repo.GetAllEvents();
+            }
         }
     }
 }

@@ -36,15 +36,15 @@ namespace Training.Controllers
         {
             try
             {
-                RepositoryUser repo = new RepositoryUser();
-                
+                using (RepositoryUser repo = new RepositoryUser())
+                {
                     if (repo.GetUser(value.Username, value.Password) != default(User))
                     {
                         return Ok();
                     }
 
                     return Unauthorized();
-                
+                }
             }catch(Exception ex)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);

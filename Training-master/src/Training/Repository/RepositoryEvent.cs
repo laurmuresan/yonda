@@ -24,12 +24,10 @@ namespace Training.Repository
                 trainingContext.Dispose();
             }
         }
-        public IEnumerable<Event> GetEvent()
+        public IEnumerable<Event> GetAllEvents()
         {
-            return trainingContext.Event;
+            return trainingContext.Events.ToList();
         }
     }
-
-
 }
 
