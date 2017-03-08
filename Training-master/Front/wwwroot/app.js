@@ -1,4 +1,4 @@
-﻿var app = angular.module('myApp', ['ui.router']);
+﻿var app = angular.module('myApp', ['ui.router','ngDialog']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -20,9 +20,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url: '/allevents',
         templateUrl: '/myApp/pages/allevents/allevents.html'
     })
-    .state('createevent', {
-        url: '/createevent',
-        templateUrl: '/myApp/pages/createevent/createevent.html'
-    });
+        
+    //.state('createevent', {
+    //    url: '/createevent',
+    //    templateUrl: '/myApp/pages/createevent/createevent.html'
+    //});
 
 });

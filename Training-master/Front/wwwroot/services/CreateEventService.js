@@ -3,20 +3,24 @@
 
     angular
         .module('myApp')
-        .factory('AuthenticationService', AuthenticationService);
+        .factory('CreateEventService', CreateEventService);
 
-    AuthenticationService.$inject = ['$http'];
-    function AuthenticationService($http) {
+    CreateEventService.$inject = ['$http'];
+    function CreateEventService($http) {
         var service = {};
 
-        service.Login = function (username, password, callback) {
-            var response
+        service.CreateEvent = function (date, time, price, location, name, callback) {
+            var response;
             $http({
                 method: 'Post',
-                url: 'http://localhost:51427/api/account/login',
+                url: 'http://localhost:51427/api/account/createevents',
                 data: {
-                    'Username': username,
-                    'Password': password,
+                    'Date': date,
+                    'Time': time,
+                    'Price': price,
+                    'Location': location,
+                    'Name': name
+
                 }
             }).then(function (result) {
                 if (result.status = "200") {
@@ -32,7 +36,7 @@
                 }
                 callback(response)
             });
-        }
+        };
 
 
         return service;
