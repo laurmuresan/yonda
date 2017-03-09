@@ -6,11 +6,18 @@
 
             self.events = self.events.concat(result.data);
         });
-        var dialog;
         self.openCreateEventForm = function () {
-           dialog= ngDialog.open({
+           return ngDialog.open({
                template: '/myApp/pages/createevent/createevent.html'
                
+            })
+        };
+        self.openUpdateEventForm = function (e) {
+            console.log(e);
+            return ngDialog.open({
+                template: '/myApp/pages/updateevent/updateevent.html'
+                
+
             })
         };
     }
@@ -23,7 +30,8 @@
                 eventItem: '='
             },
             link: function (scope, element) {
-                scope.$watch(function () { return scope.eventItem; }, function (oldvalue, newValue) { console.log(newValue); });
+              //  console.log(scope.eventItem);
+                scope.$watch(function () { return scope.eventItem; });
             }
         };
     });

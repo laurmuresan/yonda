@@ -1,7 +1,12 @@
-﻿<div _ngcontent-rrk-2="" class="well hoverwell thumbnail" >
+﻿<div _ngcontent-rrk-2="" class="well hoverwell thumbnail" ng-controller="AlleventsController as eventCtrl" >
     <h2 _ngcontent-rrk-2="">{{ eventItem.name }}</h2>
     <div _ngcontent-rrk-2="">Date:   {{ eventItem.date | date }}</div>
     <div _ngcontent-rrk-2="">Price:   {{ eventItem.price | currency }}</div>
     <div _ngcontent-rrk-2="">Location:   {{ eventItem.location }}</div>
+
+
+    <div class="ngdialog-buttons">
+        <button class="ngdialog-button ngdialog-button-primary btn btn-primary" ng-click=eventCtrl.openUpdateEventForm(eventItem)>Edit event</button>
+    </div>
     
 </div>
