@@ -2,12 +2,11 @@
         function ($http, CreateEventService) {
             var vm = this;
             vm.date = "";
-            vm.time = "";
             vm.price = "";
             vm.location = "";
             vm.name = "";
             vm.goCreateEvent = function () {
-                CreateEventService.CreateEvent(vm.date, vm.time, vm.price, vm.location, vm.name, function (response) {
+                CreateEventService.CreateEvent(vm.date, vm.price, vm.location, vm.name, function (response) {
                     if (response.success) {
                         alert("The event was created");
                     } else {

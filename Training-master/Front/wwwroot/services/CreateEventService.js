@@ -9,14 +9,13 @@
     function CreateEventService($http) {
         var service = {};
 
-        service.CreateEvent = function (date, time, price, location, name, callback) {
-            var response;
+        service.CreateEvent = function (date, price, location, name, callback) {
+            var response
             $http({
                 method: 'Post',
-                url: 'http://localhost:51427/api/account/createevents',
+                url: 'http://localhost:51427/api/createevent/createevent',
                 data: {
-                    'Date': date,
-                    'Time': time,
+                    'Date': date,                
                     'Price': price,
                     'Location': location,
                     'Name': name

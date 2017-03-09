@@ -10,12 +10,7 @@
             <label for="date">Date</label>
             <input type="datetime" name="date" id="date" class="form-control" ng-model="createCtrl.date" required />
             <span ng-show="form.date.$touched && form.date.$error.required" class="help-block">Date is required</span>
-        </div>
-        <div class="form-group">
-            <label for="time">Time</label>
-            <input type="time" name="time" id="time" class="form-control" ng-model="createCtrl.time" required />
-            <span ng-show="form.time.$touched && form.time.$error.required" class="help-block">Time is required</span>
-        </div>
+        </div>   
         <div class="form-group">
             <label for="price">Price</label>
             <input type="number" name="price" id="price" class="form-control" ng-model="createCtrl.price" required />

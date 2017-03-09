@@ -14,12 +14,11 @@ namespace Training.Controllers
     [Route("api/[controller]")]
     public class CreateEventController : Controller
     {
-        [HttpPost("allevents")]
+        [HttpPost("createevent")]
         public Event CreateEvent ([FromBody]EventCredentialsDto value)
         {
             Event eve = new Event();
             eve.date = value.date;
-            eve.time = value.time;
             eve.price = value.price;
             eve.location = value.location;
             eve.name = value.name;
