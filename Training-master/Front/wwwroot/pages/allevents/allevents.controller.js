@@ -1,4 +1,4 @@
-﻿app.controller('AlleventsController', ["$http", 'ngDialog',"AlleventsService",
+﻿app.controller('AlleventsController', ["$http", 'ngDialog', "AlleventsService",
     function ($scope, ngDialog, AlleventsService) {
         var self = this;
         this.events = [];
@@ -7,17 +7,21 @@
             self.events = self.events.concat(result.data);
         });
         self.openCreateEventForm = function () {
-           return ngDialog.open({
-               template: '/myApp/pages/createevent/createevent.html'
-               
+            return ngDialog.open({
+                template: '/myApp/pages/createevent/createevent.html'
+
             })
         };
         self.openUpdateEventForm = function (e) {
             console.log(e);
             return ngDialog.open({
-                template: '/myApp/pages/updateevent/updateevent.html'
-                
-
+                template: '/myApp/pages/updateevent/updateevent.html',
+                controller: 'UpdateEventController',
+                resolve: {
+                    inputData: function () {
+                        return e;
+                    }
+                }
             })
         };
     }
@@ -30,7 +34,7 @@
                 eventItem: '='
             },
             link: function (scope, element) {
-              //  console.log(scope.eventItem);
+                //  console.log(scope.eventItem);
                 scope.$watch(function () { return scope.eventItem; });
             }
         };

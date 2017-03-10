@@ -1,10 +1,10 @@
-﻿app.controller('UpdateEventController', ["$http", "UpdateEventService",
-        function ($http, UpdateEventService) {
+﻿app.controller('UpdateEventController', ["$http", "UpdateEventService", "inputData",
+        function ($http, UpdateEventService, data) {
             var vm = this;
-            vm.date = "";
-            vm.price = "";
-            vm.location = "";
-            vm.name = "";
+            vm.date = '';
+            vm.price = '';
+            vm.location = '';
+            vm.name = '';
             vm.goUpdateEvent = function () {
                 UpdateEventService.UpdateEvent(vm.date, vm.price, vm.location, vm.name, function (response) {
                     if (response.success) {
